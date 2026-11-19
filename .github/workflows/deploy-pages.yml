@@ -1,8 +1,8 @@
-name: Deploy SIMPATIK PWA to GitHub Pages
+name: Deploy SIMPATIK for Counseling PWA to GitHub Pages
 
 on:
   push:
-    branches: [main, deploy/github-pages]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-deploy-v2
+  group: counseling-pages-deploy
   cancel-in-progress: true
 
 jobs:
@@ -25,10 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+          cache: npm
       - name: Install dependencies
         run: npm install --legacy-peer-deps --no-audit --no-fund --fetch-retries=2 --fetch-timeout=120000
       - name: Build PWA
