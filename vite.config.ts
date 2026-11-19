@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
-    base: process.env.GITHUB_ACTIONS === 'true' ? '/SIMPATIK-SMP-Islam-Al-Wasi/' : '/',
+    base: process.env.GITHUB_ACTIONS === 'true' ? '/Simpatik-for-Counseling/' : '/',
     plugins: [
       react(),
       tailwindcss(),
@@ -15,7 +15,7 @@ export default defineConfig(() => {
         manifest: false,
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg'],
         workbox: {
-          cacheId: 'simpatik-main-icons-v2',
+          cacheId: 'simpatik-counseling-pwa-v1',
           maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
           globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest,woff,woff2}'],
           navigateFallbackDenylist: [/\/students?(?:\/|$)/],
