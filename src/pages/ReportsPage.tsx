@@ -18,7 +18,7 @@ export const ReportsPage: React.FC = () => {
 
   type ReportCategory = 'attendance' | 'journal' | 'behavior' | 'counseling' | 'grades';
 
-  const [reportType, setReportType] = useState<ReportCategory>('attendance');
+  const [reportType, setReportType] = useState<ReportCategory>('counseling');
   const [selectedClass, setSelectedClass] = useState<string>(SCHOOL_CLASSES[0]);
 
   const classStudents = students.filter(
@@ -100,10 +100,10 @@ export const ReportsPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-sm font-bold text-slate-900">
-              Pusat Laporan & Rekapitulasi Terpadu
+              Pusat Laporan Bimbingan dan Konseling
             </h2>
             <p className="text-xs text-slate-500">
-              Unduh dan cetak laporan resmi berstandar administratif SMP Islam Al-Wasi’
+              Dokumentasi layanan konseling dan pembinaan peserta didik
             </p>
           </div>
 
@@ -125,64 +125,10 @@ export const ReportsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Categories Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 border-t border-slate-100 pt-3">
-          <button
-            onClick={() => setReportType('attendance')}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${
-              reportType === 'attendance'
-                ? 'bg-[#076B3A] text-white shadow-xs'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-            }`}
-          >
-             Laporan Presensi
-          </button>
-
-          <button
-            onClick={() => setReportType('journal')}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${
-              reportType === 'journal'
-                ? 'bg-[#076B3A] text-white shadow-xs'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-            }`}
-          >
-             Laporan Jurnal KBM
-          </button>
-
-          <button
-            onClick={() => setReportType('behavior')}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${
-              reportType === 'behavior'
-                ? 'bg-[#076B3A] text-white shadow-xs'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-            }`}
-          >
-             Laporan Karakter Siswa
-          </button>
-
-          {canAccessBK && (
-            <button
-              onClick={() => setReportType('counseling')}
-              className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${
-                reportType === 'counseling'
-                  ? 'bg-[#076B3A] text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }`}
-            >
-               Laporan Layanan BK
-            </button>
-          )}
-
-          <button
-            onClick={() => setReportType('grades')}
-            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors whitespace-nowrap ${
-              reportType === 'grades'
-                ? 'bg-[#076B3A] text-white shadow-xs'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-            }`}
-          >
-             Laporan Hasil Belajar
-          </button>
+        {/* Kategori laporan khusus BK */}
+        <div className="flex items-center gap-2 overflow-x-auto border-t border-slate-100 pt-3">
+          <button onClick={() => setReportType('counseling')} className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-bold ${reportType==='counseling'?'bg-[#076B3A] text-white':'bg-slate-100 text-slate-600'}`}>Laporan Layanan BK</button>
+          <button onClick={() => setReportType('behavior')} className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-bold ${reportType==='behavior'?'bg-[#076B3A] text-white':'bg-slate-100 text-slate-600'}`}>Laporan Pembinaan</button>
         </div>
 
         {/* Filter Kelas */}
