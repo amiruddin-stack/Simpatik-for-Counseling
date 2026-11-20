@@ -16,13 +16,7 @@ export const HomeTopBar: React.FC<HomeTopBarProps> = ({ activeTab, onNavigate })
     const query = globalSearch.trim().toLowerCase();
     if (!query) return;
     const destinations: [string[], NavTab][] = [
-      [['presensi', 'kehadiran', 'absen', 'hadir', 'izin', 'sakit'], 'attendance'],
-      [['jurnal', 'kbm', 'pembelajaran', 'materi'], 'journal'],
-      [['nilai', 'penilaian', 'tugas', 'ulangan'], 'assessment'],
       [['kelas', 'rombel'], 'classes'],
-      [['mapel', 'mata pelajaran', 'kurikulum'], 'subjects'],
-      [['ujian', 'soal', 'cbt', 'tes'], 'exams'],
-      [['wali', 'rapor', 'rekap', 'capaian'], 'grades'],
       [['bk', 'konseling', 'bimbingan'], 'counseling'],
       [['laporan', 'cetak', 'rekapitulasi'], 'reports'],
       [['siswa', 'guru', 'data master', 'sekolah'], 'master'],
@@ -43,7 +37,7 @@ export const HomeTopBar: React.FC<HomeTopBarProps> = ({ activeTab, onNavigate })
         </div>
         <form onSubmit={handleGlobalSearch} className="flex h-9 min-w-0 flex-1 items-center gap-2 rounded-full border border-[#D5EADB] bg-[#F8FCF9] px-3 sm:h-10 sm:px-4">
           <Search size={17} className="shrink-0 text-[#0B8F4D]" />
-          <input value={globalSearch} onChange={e=>setGlobalSearch(e.target.value)} type="search" aria-label="Cari siswa atau fitur SIMPATIK" placeholder="Search - siswa atau fitur SIMPATIK" className="min-w-0 w-full bg-transparent text-xs text-slate-700 outline-none placeholder:text-slate-400 sm:text-sm" />
+          <input value={globalSearch} onChange={e=>setGlobalSearch(e.target.value)} type="search" aria-label="Cari siswa atau fitur SIMPATIK" placeholder="Cari siswa atau layanan BK" className="min-w-0 w-full bg-transparent text-xs text-slate-700 outline-none placeholder:text-slate-400 sm:text-sm" />
         </form>
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 sm:h-10 sm:w-10" aria-label="Notifikasi">
           <Bell size={18} strokeWidth={1.8} />
