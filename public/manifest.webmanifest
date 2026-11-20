@@ -11,10 +11,10 @@
   "scope": "./",
   "icons": [
     {
-      "src": "./8_20261120_091359_0000.png",
+      "src": "./IMG_20261120_092305.png",
       "sizes": "any",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
