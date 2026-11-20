@@ -7,9 +7,9 @@ import {
 import { NavTab } from './Sidebar';
 
 const pageDetails: Record<NavTab, { title: string; description: string; icon: React.ElementType }> = {
-  dashboard: { title: 'Beranda', description: 'Pusat informasi dan aktivitas sekolah', icon: Home },
+  dashboard: { title: 'Beranda BK', description: 'Ringkasan layanan bimbingan dan konseling', icon: Home },
   settings: { title: 'Profil', description: 'Informasi akun dan pengaturan profil', icon: UserRound },
-  classes: { title: 'Kelas', description: 'Pengelolaan tingkat dan data kelas', icon: GraduationCap },
+  classes: { title: 'Data Kelas', description: 'Data rombongan belajar untuk layanan BK', icon: GraduationCap },
   subjects: { title: 'Mapel', description: 'Daftar dan pengelolaan mata pelajaran', icon: BookOpen },
   attendance: { title: 'Presensi Siswa', description: 'Pencatatan dan pemantauan kehadiran siswa', icon: CalendarCheck },
   journal: { title: 'Jurnal Pembelajaran', description: 'Catatan kegiatan pembelajaran di kelas', icon: FileText },
@@ -17,10 +17,10 @@ const pageDetails: Record<NavTab, { title: string; description: string; icon: Re
   grades: { title: 'Rekap Nilai', description: 'Ringkasan hasil belajar dan nilai siswa', icon: FileBarChart },
   exams: { title: 'Ujian', description: 'Pembuatan, pengelolaan, dan hasil ujian', icon: ClipboardList },
   'google-form-exams': { title: 'Ujian Form', description: 'Pengelolaan ujian berbasis Google Forms', icon: ClipboardPenLine },
-  counseling: { title: 'Bimbingan Konseling', description: 'Pendampingan dan layanan konseling siswa', icon: HeartHandshake },
-  behavior: { title: 'Perilaku Siswa', description: 'Pemantauan sikap, karakter, dan perilaku siswa', icon: ShieldCheck },
-  reports: { title: 'Laporan', description: 'Ringkasan dan dokumentasi kegiatan sekolah', icon: FileBarChart },
-  master: { title: 'Data Guru dan Siswa', description: 'Pengelolaan data warga sekolah', icon: Users },
+  counseling: { title: 'Layanan Konseling', description: 'Pendampingan pribadi, sosial, belajar, dan karir', icon: HeartHandshake },
+  behavior: { title: 'Perilaku & Pembinaan', description: 'Pemantauan perkembangan dan tindak lanjut siswa', icon: ShieldCheck },
+  reports: { title: 'Laporan BK', description: 'Ringkasan layanan konseling dan pembinaan siswa', icon: FileBarChart },
+  master: { title: 'Data Siswa & Guru', description: 'Data pendukung layanan bimbingan dan konseling', icon: Users },
   ils: { title: 'ILS', description: 'Informasi dan layanan ILS SMP Islam Al-Wasi’', icon: Sparkles },
   homeroom: { title: 'Guru Wali', description: 'Ruang kerja dan pendampingan Guru Wali', icon: UserRound },
   schedule: { title: 'Jadwal', description: 'Jadwal kegiatan dan pembelajaran sekolah', icon: CalendarDays },
@@ -45,7 +45,7 @@ export const PageBanner: React.FC<PageBannerProps> = ({ activeTab, onBack, title
           <ArrowLeft size={20}/>
         </button>
         <div className="min-w-0">
-          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/85 sm:text-[11px]">SIMPATIK · SMP ISLAM AL-WASI’</p>
+          <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/85 sm:text-[11px]">SIMPATIK FOR COUNSELING · SMP ISLAM AL-WASI’</p>
           <h1 className="mt-0.5 truncate text-xl font-black tracking-tight text-white sm:text-2xl md:text-[28px]">{title || details.title}</h1>
           <p className="mt-0.5 line-clamp-1 text-[11px] font-medium text-white/90 sm:text-xs">{description || details.description}</p>
         </div>
