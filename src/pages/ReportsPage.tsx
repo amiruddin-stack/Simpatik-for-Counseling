@@ -57,6 +57,11 @@ export const ReportsPage: React.FC = () => {
       rows = behaviors
         .filter((b) => getClassLevel(b.className) === getClassLevel(selectedClass))
         .map((b, idx) => [idx + 1, b.date, `"${b.studentName}"`, b.className, `"${b.category}"`, `"${b.description}"`, `"${b.coachingAction}"`, b.status]);
+    } else if (reportType === 'counseling') {
+      headers = ['No', 'Tanggal', 'Nama Siswa', 'Kelas', 'Bidang Layanan', 'Pokok Permasalahan', 'Rencana Tindak Lanjut', 'Status'];
+      rows = counselings
+        .filter((item) => getClassLevel(item.className) === getClassLevel(selectedClass))
+        .map((item, idx) => [idx + 1, item.date, `"${item.studentName}"`, item.className, item.serviceType, `"${item.issueSummary}"`, `"${item.actionPlan}"`, item.followUpStatus]);
     } else if (reportType === 'grades') {
       headers = ['No', 'NIS', 'Nama Siswa', 'Kelas', 'Rata-Rata Nilai', 'Predikat'];
       rows = classStudents.map((std, idx) => {
